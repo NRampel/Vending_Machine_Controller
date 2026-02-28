@@ -21,12 +21,19 @@ A robust Finite State Machine (FSM) implementation of a vending machine controll
 
 ```mermaid
 graph TD
-    IDLE[Idle / Wait for Coin] --> COIN{Coin Inserted?}
-    COIN -->|Yes| ADD[Add to Balance]
-    ADD --> BAL[Check Balance]
-    BAL -->|Insufficient| IDLE
-    BAL -->|Sufficient| SELECT[Wait for Selection]
-    SELECT --> DISPENSE[Dispense Item]
-    DISPENSE --> CHANGE[Return Change]
-    CHANGE --> IDLE
+    S0["S0: Initialize / Clear Credit"]
+    S1["S1: Idle / Accept Coins"]
+    S2["S2: Refund"]
+    S3["S3: Insufficient Funds (Error)"]
+    S4["S4: Dispense Item"]
+
+    S0 -->|Automatic| S1
+    S1 -->|Quarter / Dollar Added| S1
+    S1 -->|Refund Button Pressed| S2
+    S1 -->|Item Selected & Credit >= Price| S4
+    S1 -->|Item Selected & Credit < Price| S3
+    
+    S2 -->|Timer Complete (ctr = x 3FFFFFF )| S0
+    S3 -->|Timer Complete (ctr = x 3FFFFFF )| S1
+    S4 -->|Timer Complete (ctr = x 3FFFFFF )| S1
 
