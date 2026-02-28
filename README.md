@@ -9,3 +9,9 @@ A robust Finite State Machine (FSM) implementation of a vending machine controll
 * Accepts Multiple Coin Denominations
 * Properly Increments and Decrements
 * Dispenses Desired Item if Correct Amount was Inserted
+
+## Key Features: 
+* **Synchronus Design:** All logic is bound to a common clock
+* **Input Pulsing & Debouncing:** All buttons and switches are debounced to ensure proper calculation
+* **7-Segment Display:** Displays machine state and balance, all changes are displayed
+
