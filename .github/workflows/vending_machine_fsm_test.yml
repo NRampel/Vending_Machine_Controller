@@ -21,5 +21,6 @@ jobs:
           
       - name: Elaborate and Run the Testbench
         run: |
+          cd "New Vending Machine.srcs"
           ghdl -e --std=08 vending_machine_tb
           ghdl -r --std=08 vending_machine_tb
