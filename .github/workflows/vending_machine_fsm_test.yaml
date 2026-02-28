@@ -1,0 +1,24 @@
+name: VHDL Automated Test
+
+on: [push, pull_request]
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Grab the code
+        uses: actions/checkout@v4
+
+      - name: Install GHDL (Open Source VHDL Simulator)
+        run: sudo apt-get update && sudo apt-get install -y ghdl
+
+      - name: Compile the VHDL code
+        run: |
+          ghdl -a --std=08 sources_1/new/vending_machine.vhd
+          ghdl -a --std=08 sim_1/new/testbenches/vending_machine_tb.vhd
+          
+      - name: Elaborate and Run the Testbench
+        run: |
+          ghdl -e --std=08 vending_machine_tb
+          ghdl -r --std=08 vending_machine_tb
