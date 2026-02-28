@@ -2,3 +2,10 @@
 
 # Vending Machine Controller
 
+A robust Finite State Machine (FSM) implementation of a vending machine controller, designed for FPGA integration
+
+## Overview 
+* Employs Control Signal Based Design
+* Accepts Multiple Coin Denominations
+* Properly Increments and Decrements
+* Dispenses Desired Item if Correct Amount was Inserted
