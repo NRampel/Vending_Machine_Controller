@@ -2,7 +2,7 @@
 
 # Vending Machine Controller
 
-[![Vending Machine FSM Test](https://github.com/YourName/Vending-Machine/actions/workflows/vending_machine_fsm_test.yaml/badge.svg)](https://github.com/YourName/Vending-Machine/actions/workflows/vending_machine_fsm_test.yaml)
+[![vending_machine_fsm_test](https://github.com/YourName/Vending-Machine/actions/workflows/vending_machine_fsm_test.yaml/badge.svg)](https://github.com/YourName/Vending-Machine/actions/workflows/vending_machine_fsm_test.yaml)
 
 A robust Finite State Machine (FSM) implementation of a vending machine controller, designed for FPGA integration
 
